@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/01-runescape-the-orchestral-collection-runescape-theme.mp3-2c46aff1be44f794ab7cae765c49b889.mp3str"
+
+[deps]
+
+source_file="res://sounds/01-runescape-the-orchestral-collection-runescape-theme.mp3"
+dest_files=[ "res://.import/01-runescape-the-orchestral-collection-runescape-theme.mp3-2c46aff1be44f794ab7cae765c49b889.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

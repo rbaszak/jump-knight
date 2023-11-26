@@ -1,0 +1,84 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://PlayerSprites/down1.png" type="Texture" id=2]
+[ext_resource path="res://PlayerSprites/down2.png" type="Texture" id=3]
+[ext_resource path="res://PlayerSprites/down4.png" type="Texture" id=4]
+[ext_resource path="res://PlayerSprites/idle.png" type="Texture" id=5]
+[ext_resource path="res://PlayerSprites/down3.png" type="Texture" id=6]
+[ext_resource path="res://sounds/land.ogg" type="AudioStream" id=7]
+[ext_resource path="res://sounds/minecraft-death-sound-effect.ogg" type="AudioStream" id=8]
+[ext_resource path="res://sounds/jump.ogg" type="AudioStream" id=9]
+[ext_resource path="res://PlayerSprites/standup2.png" type="Texture" id=10]
+[ext_resource path="res://PlayerSprites/fall1.png" type="Texture" id=11]
+[ext_resource path="res://PlayerSprites/fall2.png" type="Texture" id=12]
+[ext_resource path="res://PlayerSprites/standup1.png" type="Texture" id=13]
+[ext_resource path="res://sounds/yamete-kudasai-sound-effect.ogg" type="AudioStream" id=14]
+[ext_resource path="res://sounds/bonk-sound-effect.ogg" type="AudioStream" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "Fallen",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "Standup",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Hold",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "PreJump",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 20.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.378, 0.378 )
+frames = SubResource( 2 )
+animation = "Idle"
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -60.0
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -45.0
+
+[node name="LandSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -45.0
+
+[node name="OneprctSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -60.0
+
+[node name="BonkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -65.0

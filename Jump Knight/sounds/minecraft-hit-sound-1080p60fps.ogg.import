@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minecraft-hit-sound-1080p60fps.ogg-6494109559b0da17c5761e1307a007cf.oggstr"
+
+[deps]
+
+source_file="res://sounds/minecraft-hit-sound-1080p60fps.ogg"
+dest_files=[ "res://.import/minecraft-hit-sound-1080p60fps.ogg-6494109559b0da17c5761e1307a007cf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bonk-sound-effect.ogg-54423300f5d2d35bcf0e631ea4fd8e2e.oggstr"
+
+[deps]
+
+source_file="res://sounds/bonk-sound-effect.ogg"
+dest_files=[ "res://.import/bonk-sound-effect.ogg-54423300f5d2d35bcf0e631ea4fd8e2e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://FontData.tres" type="Theme" id=1]
+[ext_resource path="res://VolumeSlider.gd" type="Script" id=2]
+[ext_resource path="res://SettingsWindow.gd" type="Script" id=3]
+[ext_resource path="res://CheckButton.gd" type="Script" id=4]
+
+[node name="SettingsWindow" type="AcceptDialog"]
+pause_mode = 2
+margin_left = 168.0
+margin_top = 176.0
+margin_right = 852.0
+margin_bottom = 664.0
+window_title = "Settings"
+script = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="MusicLabel" type="Label" parent="Node2D"]
+margin_left = 311.0
+margin_top = 125.0
+margin_right = 430.0
+margin_bottom = 192.0
+theme = ExtResource( 1 )
+text = "Music"
+
+[node name="VolumeSlider" type="HSlider" parent="Node2D"]
+margin_left = 48.0
+margin_top = 48.0
+margin_right = 605.0
+margin_bottom = 357.0
+script = ExtResource( 2 )
+
+[node name="ExitButton" type="Button" parent="Node2D"]
+margin_left = 232.0
+margin_top = 356.0
+margin_right = 435.0
+margin_bottom = 411.0
+theme = ExtResource( 1 )
+text = "Exit Game"
+
+[node name="CheckButton" type="CheckButton" parent="Node2D"]
+margin_left = 584.0
+margin_top = 440.0
+margin_right = 660.0
+margin_bottom = 480.0
+focus_mode = 0
+enabled_focus_mode = 0
+script = ExtResource( 4 )
+
+[node name="MenuButton" type="Button" parent="Node2D"]
+margin_left = 157.0
+margin_top = 274.0
+margin_right = 525.0
+margin_bottom = 329.0
+theme = ExtResource( 1 )
+text = "Back to Main Menu"
+
+[node name="Ending" type="Label" parent="Node2D"]
+margin_left = 584.0
+margin_top = 432.0
+margin_right = 654.0
+margin_bottom = 446.0
+text = "+18 Ending"
+
+[node name="Resolution" type="Label" parent="Node2D"]
+margin_left = 56.0
+margin_top = 360.0
+margin_right = 128.0
+margin_bottom = 374.0
+text = "Resolution:"
+
+[node name="Label2" type="Label" parent="Node2D"]
+margin_left = 592.0
+margin_top = 368.0
+margin_right = 658.0
+margin_bottom = 382.0
+text = "Fullscreen"
+
+[node name="FsButton" type="CheckButton" parent="Node2D/Label2"]
+margin_left = -8.0
+margin_top = 16.0
+margin_right = 68.0
+margin_bottom = 56.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D"]
+margin_left = 40.0
+margin_top = 384.0
+margin_right = 140.0
+margin_bottom = 452.0
+
+[node name="OptionButton" type="OptionButton" parent="Node2D/VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 20.0
+
+[connection signal="confirmed" from="." to="." method="_on_SettingsWindow_confirmed"]
+[connection signal="value_changed" from="Node2D/VolumeSlider" to="Node2D/VolumeSlider" method="_on_VolumeSlider_value_changed"]
+[connection signal="pressed" from="Node2D/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="Node2D/CheckButton" to="." method="_on_CheckButton_pressed"]
+[connection signal="pressed" from="Node2D/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="Node2D/Label2/FsButton" to="." method="_on_FsButton_pressed"]
+[connection signal="item_selected" from="Node2D/VBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minecraft-death-sound-effect.ogg-56d7976a0debc3bc897e576e79bc46fe.oggstr"
+
+[deps]
+
+source_file="res://sounds/minecraft-death-sound-effect.ogg"
+dest_files=[ "res://.import/minecraft-death-sound-effect.ogg-56d7976a0debc3bc897e576e79bc46fe.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
